@@ -11,11 +11,17 @@ builder.Configuration
     .AddEnvironmentVariables()
     .AddUserSecrets<Program>();
 
+var mcpsProjectPath = Path.Combine(
+    Directory.GetCurrentDirectory().Split("McpClient")[0],
+    "Mcps",
+    "Mcps.csproj"
+);
+
 var clientTransport = new StdioClientTransport(new()
 {
     Name = "Demo Server",
     Command = "dotnet",
-    Arguments = ["run", "--project", @"C:\Users\carlo\source\repos\Mcps\Mcps\Mcps.csproj"],
+    Arguments = ["run", "--project", mcpsProjectPath],
 });
 
 await using var client = await McpClient.CreateAsync(clientTransport);
@@ -34,6 +40,7 @@ Console.WriteLine(calculatorResult.Content.First(c => c.Type == "text").ToAICont
 
 var dateResult = await client.CallToolAsync(
     "get_current_time",
+    new Dictionary<string, object?>() { ["culture"] = "es-Es", ["format"] = "g", ["timeZone"] = "Europe/Madrid" },
     cancellationToken: CancellationToken.None);
 
 Console.WriteLine(dateResult.Content.First(c => c.Type == "text").ToAIContent());

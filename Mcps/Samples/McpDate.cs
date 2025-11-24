@@ -9,7 +9,7 @@ namespace Mcps.Samples;
 public static class McpDate
 {
     [McpServerTool(Name = "get_current_time"), Description("Gets current time based on iso culture, format and timezone")]
-    public static string get_current_time([Description("User ISO culture used for dates. eg: es-ES")]string culture,
+    public static string GetCurrentTime([Description("User ISO culture used for dates. eg: es-ES")]string culture,
                                           [Description("Date time string output format. Can use specific C# 12 string date formats. eg: s")] string format,
                                           [Description("Selected time zone to parse UTC to local date. eg: Europe/Madrid")]string timeZone)
     {
