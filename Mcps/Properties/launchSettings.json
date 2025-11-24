@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Mcps": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "false"
+      }
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
