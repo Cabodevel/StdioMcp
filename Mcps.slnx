@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="HttpMcp/HttpMcp.csproj" Id="fd431e7d-fdb5-4cb4-8e42-5ffbdc0ad22d" />
   <Project Path="McpClient/McpClient.csproj" Id="2f6c303a-60d7-4ad8-be3f-2104c93ce590" />
   <Project Path="Mcps/Mcps.csproj" />
 </Solution>

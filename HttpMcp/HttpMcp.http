@@ -1,0 +1,6 @@
+@HttpMcp_HostAddress = http://localhost:5032
+
+GET {{HttpMcp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
